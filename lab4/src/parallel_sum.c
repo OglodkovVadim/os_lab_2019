@@ -121,7 +121,7 @@ for (uint32_t i = 0; i < threads_num; i++) {
         args[i].end = (i + 1) * array_size / threads_num;
         if(args[i].end > array_size) {
             printf ("%d %d\n", args[i].begin, args[i].end);
-            printf("SHIT!");
+            printf("Error!");
             return -1;
         }
     } else {

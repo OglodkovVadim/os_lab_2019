@@ -100,7 +100,7 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  if (seed == -1 || array_size == -1 || pnum == -1 || timeout == -1) {
+  if (seed == -1 || array_size == -1 || pnum == -1) {
     printf("Usage: %s --seed \"num\" --array_size \"num\" --pnum \"num\" \n",
     argv[0]);
     return 1;
@@ -178,7 +178,9 @@ int main(int argc, char **argv) {
   int status;
   pid_t wpid;
 
-  alarm(timeout);
+  if (timeout != -1)
+    alarm(timeout);
+  
   for(int i = 0; i < pnum; i++){
     wpid = waitpid(list_proc[i], &status, 0);
     if (WIFEXITED(status)) {
