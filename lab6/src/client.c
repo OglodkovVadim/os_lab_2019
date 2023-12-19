@@ -11,7 +11,7 @@
 #include <netinet/ip.h>
 #include <sys/socket.h>
 #include <sys/types.h>
-#include <arpa/inet.h> 
+#include <arpa/inet.h>
 
 struct Server {
   char ip[255];

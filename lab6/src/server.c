@@ -172,7 +172,6 @@ int main(int argc, char **argv) {
       struct FactorialArgs args[tnum];
       int chunk = (end - begin + 1) / tnum;
       for (uint32_t i = 0; i < tnum; i++) {
-        // TODO: parallel somehow: Done
         args[i].begin = i * chunk + begin;
         args[i].end = (i == tnum - 1) ? end : (i + 1) * chunk + begin - 1;
         args[i].mod = mod;
